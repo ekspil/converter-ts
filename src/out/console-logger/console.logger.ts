@@ -2,13 +2,15 @@ import {StreamLoggerInterface} from "../../core/handlers/stream-logger.interface
 
 export class ConsoleLogger implements StreamLoggerInterface {
     private static logger: ConsoleLogger
-    public getInstance(){
+    private constructor() {
+    }
+
+
+    public static getInstance(){
         if(!ConsoleLogger.logger){
             ConsoleLogger.logger = new ConsoleLogger()
         }
         return ConsoleLogger.logger
-    }
-    private constructor() {
     }
 
     end(): void {
